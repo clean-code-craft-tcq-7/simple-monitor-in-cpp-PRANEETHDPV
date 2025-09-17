@@ -6,10 +6,10 @@
 using std::cout, std::flush, std::this_thread::sleep_for, std::chrono::seconds;
 
 int vitalsOk(float temperature, float pulseRate, float spo2) {
-return vit_Temp(temperature)&&vit_PulseRate(pulseRate)&&vit_Spo2(spo2);
+return vital_Temp(temperature)&&vital_PulseRate(pulseRate)&&vital_Spo2(spo2);
 }
 
-int vit_Temp(float temperature) {
+int vital_Temp(float temperature) {
   if (temperature > 102 || temperature < 95) {
     cout << "Temperature is critical!\n";
     time();
@@ -17,7 +17,7 @@ int vit_Temp(float temperature) {
     }
     return 1;
   }
-  int vit_PulseRate(float pulseRate) {
+  int vital_PulseRate(float pulseRate) {
   if (pulseRate < 60 || pulseRate > 100) {
     cout << "Pulse Rate is out of range!\n";
     time();
@@ -25,7 +25,7 @@ int vit_Temp(float temperature) {
     }
     return 1;
   }
-  int vit_Spo2(float spo2) {
+  int vital_Spo2(float spo2) {
     if (spo2 < 90) {
     cout << "Oxygen Saturation out of range!\n";
     time();
